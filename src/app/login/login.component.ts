@@ -10,6 +10,18 @@ import { error } from 'console';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  loginType="loginn";
+  change(){
+    if(this.loginType=="signupp")
+    {
+      this.loginType="loginn";
+      console.log(this.loginType);
+    }
+    else{
+      this.loginType="signupp";
+      console.log(this.loginType);
+    }
+  }
   user:Users=new Users();
   constructor(private loginService:LoginServiceService,private router:Router){}
   

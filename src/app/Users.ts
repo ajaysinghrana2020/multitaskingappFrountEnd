@@ -1,4 +1,6 @@
 export class Users{
-    name!:string;
+    fname!:string;
+    lname!:string;
+    password!:string;
     email!:string;
 }
