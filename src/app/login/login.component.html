@@ -23,14 +23,14 @@
               <label>
                 First Name<span class="req">*</span>
               </label>
-              <input type="text" required autocomplete="off" [(ngModel)]="user.fname"/>
+              <input type="text" required autocomplete="off" name="fname" [(ngModel)]="user.fname"/>
             </div>
          
             <div class="field-wrap">
               <label>
                 Last Name<span class="req">*</span>
               </label>
-              <input type="text"required autocomplete="off" [(ngModel)]="user.lname"/>
+              <input type="text"required autocomplete="off" name="lname" [(ngModel)]="user.lname"/>
             </div>
           </div>
  
@@ -38,14 +38,14 @@
             <label>
               Email Address<span class="req">*</span>
             </label>
-            <input type="email"required autocomplete="off" [(ngModel)]="user.email"/>
+            <input type="email"required autocomplete="off" name="email" [(ngModel)]="user.email"/>
           </div>
            
           <div class="field-wrap">
             <label>
               Set A Password<span class="req">*</span>
             </label>
-            <input type="password"required autocomplete="off" [(ngModel)]="user.password"/>
+            <input type="password"required autocomplete="off" name="password" [(ngModel)]="user.password"/>
           </div>
           <button type="submit" class="button button-block" (click)="userlogin()">Get Started</button>
           </form>
