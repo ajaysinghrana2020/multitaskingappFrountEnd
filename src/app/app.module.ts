@@ -10,6 +10,12 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { QuestionsPageComponent } from './landing-page/questions-page/questions-page.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { HeadbarComponent } from './headbar/headbar.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import { SignupComponent } from './signup/signup.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +23,9 @@ import { QuestionsPageComponent } from './landing-page/questions-page/questions-
     LoginComponent,
     NotesComponent,
     LandingPageComponent,
-    QuestionsPageComponent
+    QuestionsPageComponent,
+    HeadbarComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +33,9 @@ import { QuestionsPageComponent } from './landing-page/questions-page/questions-
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

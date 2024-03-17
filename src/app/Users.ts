@@ -1,6 +1,10 @@
-export class Users{
-    fname!:string;
-    lname!:string;
-    password!:string;
-    email!:string;
-}
+// export class Users{
+//     username!:string;
+//     firstName!:string;
+//     lastName!:string;
+//     email!:string;
+//     phone!:string;
+//     enabled!:string;
+//     profile!:string;
+//     password!:string;
+// }

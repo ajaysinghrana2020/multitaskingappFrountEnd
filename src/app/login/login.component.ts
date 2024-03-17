@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { Users } from '../Users';
+// import { Users } from '../Users';
 import { LoginServiceService } from '../login-service.service';
 import { Router } from '@angular/router';
 import { error } from 'console';
+import Swal from 'sweetalert2'
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -10,24 +12,28 @@ import { error } from 'console';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  loginType="loginn";
-  change(){
-    if(this.loginType=="signupp")
-    {
-      this.loginType="loginn";
-      console.log(this.loginType);
-    }
-    else{
-      this.loginType="signupp";
-      console.log(this.loginType);
-    }
-  }
-  user:Users=new Users();
-  constructor(private loginService:LoginServiceService,private router:Router){}
+  constructor(private loginservice:LoginService){}
   
-userlogin(){
-  this.loginService.loginUser(this.user).subscribe(data=>{
-    alert("sucess");
-  },error=>alert("not able to login"));
-}
+  public loginDetails={
+    username:'',
+    password:''
+    };
+  
+    formSubmit(){
+      if(this.loginDetails.username.trim()==''||this.loginDetails.password==''){
+        alert("username or password required");
+        return;
+      }
+      
+      this.loginservice.generateToken(this.loginDetails).subscribe(
+        (data:any)=>{
+
+        },
+        (error:any)=>{
+          console.log("Error");
+          console.log(error);
+        }
+      )
+    }
+    
 }
