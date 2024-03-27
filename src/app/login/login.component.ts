@@ -27,7 +27,13 @@ export class LoginComponent {
       
       this.loginservice.generateToken(this.loginDetails).subscribe(
         (data:any)=>{
-
+        this.loginservice.loginUser(data.token);
+        this.loginservice.getCurrentUser().subscribe(
+          (user:any)=>{
+            this.loginservice.setUser(user);
+            console.log(user);
+          }
+        )
         },
         (error:any)=>{
           console.log("Error");

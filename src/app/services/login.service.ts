@@ -9,6 +9,12 @@ export class LoginService {
 
   private baseurl = "http://localhost:8080/";
   constructor(private http: HttpClient) { }
+
+  public getCurrentUser(){
+    return this.http.get(`${this.baseurl}current-user`);
+  }
+
+
   generateToken(loginData: any): Observable<object> {
     return this.http.post(`${this.baseurl}generate-token`, loginData);
   }
