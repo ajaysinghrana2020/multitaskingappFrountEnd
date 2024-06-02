@@ -12,11 +12,11 @@ import { LoginService } from '../services/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private loginservice:LoginService){}
+  constructor(private loginservice:LoginService, private router:Router){}
   
   public loginDetails={
-    username:'',
-    password:''
+    username:"",
+    password:""
     };
   
     formSubmit(){
@@ -27,11 +27,27 @@ export class LoginComponent {
       
       this.loginservice.generateToken(this.loginDetails).subscribe(
         (data:any)=>{
+          
         this.loginservice.loginUser(data.token);
         this.loginservice.getCurrentUser().subscribe(
           (user:any)=>{
             this.loginservice.setUser(user);
             console.log(user);
+            console.log(this.loginDetails.password);
+          console.log(this.loginDetails.username);
+            if(this.loginservice.getUserRole()=="ADMIN"){
+              // window.location.href='/admin';
+              this.router.navigate(['admin']);
+              this.loginservice.loginStatusSubject.next(true);
+            }
+            else if(this.loginservice.getUserRole()=="NORMAL"){
+            //  window.location.href='/user-dashboard';
+            this.router.navigate(['user-dashboard']);
+            this.loginservice.loginStatusSubject.next(true);
+            }
+            else{
+              this.loginservice.logout();
+            }
           }
         )
         },

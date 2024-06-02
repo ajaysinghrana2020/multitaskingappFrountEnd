@@ -15,6 +15,12 @@ import { HeadbarComponent } from './headbar/headbar.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { SignupComponent } from './signup/signup.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
+import { authInterceptorProviders } from './services/auth.interceptor';
+import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
 
 
 @NgModule({
@@ -25,7 +31,10 @@ import { SignupComponent } from './signup/signup.component';
     LandingPageComponent,
     QuestionsPageComponent,
     HeadbarComponent,
-    SignupComponent
+    SignupComponent,
+    UserDashboardComponent,
+    ProfileComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -36,8 +45,9 @@ import { SignupComponent } from './signup/signup.component';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatSlideToggleModule,
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

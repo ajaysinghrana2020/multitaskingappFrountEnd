@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
+  public loginStatusSubject=new Subject<boolean>();
 
   private baseurl = "http://localhost:8080/";
   constructor(private http: HttpClient) { }
@@ -16,11 +17,13 @@ export class LoginService {
 
 
   generateToken(loginData: any): Observable<object> {
+    console.log('we are here');
     return this.http.post(`${this.baseurl}generate-token`, loginData);
   }
   //login user:set token in local storage
   loginUser(token: any) {
     localStorage.setItem("token", token);
+    
     return true;
   }
 

@@ -33,3 +33,21 @@ nav a {
 nav a:hover {
   color: #000;
 }
+
+a:hover{
+  color: red;
+}
+
+.button {
+  background-color: #c7c5c5; 
+  border: none;
+  color: rgb(11, 10, 10);
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Console } from 'console';
 import { LoginServiceService } from '../login-service.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -18,17 +19,21 @@ export class SignupComponent {
     phone:'',
     password:''
   }
+  
+ 
   ngOnInit():void{}
   formSubmit(){
     if(this.user.username=='' || this.user.password==''|| this.user.email==''){
       alert('User is required');
       return;
     }
+    
   this.loginServiceService.addUser(this.user).subscribe(
     (data)=>{
       //success
       console.log(data);
       alert('success');
+      
     },
     (error)=>{
       //error

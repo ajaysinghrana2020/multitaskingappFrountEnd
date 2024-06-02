@@ -3,9 +3,13 @@
     <h1>My Website Title</h1>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a [routerLink]="['Login']">Login</a></li>
-        <li><a [routerLink]="['']">SignUp</a></li>
+        <li><button class="button " *ngIf="!isLoggedIn" href="#">Home</button></li>
+        <li><button class="button " *ngIf="!isLoggedIn" [routerLink]="['login']">Login</button></li>
+
+        <li><button class="button " *ngIf="!isLoggedIn" [routerLink]="['']">SignUp</button></li>
+        <li><button class="button " *ngIf="isLoggedIn" [routerLink]="['admin']">Home</button></li>
+        <li><button class="button " *ngIf="isLoggedIn" (click)="logout()">Logout</button></li>
+        <li><button class="button " *ngIf="isLoggedIn" [routerLink]="['admin/profile']">{{user.username}}</button></li>
       </ul>
     </nav>
   </header>

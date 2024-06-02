@@ -1,0 +1,36 @@
+
+<div class="container">
+    <h2>User Profile</h2>
+    <div class="profile-details">
+        <label for="name">Name:</label>
+        <p id="name">{{user.username}}</p>
+    </div>
+    <div class="profile-details">
+        <label for="email">Email:</label>
+        <p id="email">{{user.email}}</p>
+    </div>
+    <div class="profile-details">
+        <label for="email">UserId:</label>
+        <p id="email">{{user.id}}</p>
+    </div>
+    <div class="profile-details">
+        <label for="phone">Phone:</label>
+        <p id="phone">{{user.phone}}</p>
+    </div>
+    <div class="profile-details">
+        <label for="bio">Role:</label>
+        <p id="bio">{{user.authorities[0].authority}} </p>
+    </div>
+    <div class="profile-details">
+        <label for="bio">Status:</label>
+        <p id="bio">{{user.enabled?"ACTIVE":"NOT ACTIVE"}}</p>
+    </div>
+    <button class="btn" onclick="editProfile()">Edit Profile</button>
+</div>
+
+<script>
+    function editProfile() {
+        // Simulate editing functionality
+        alert("Edit profile functionality can be implemented here.");
+    }
+</script>

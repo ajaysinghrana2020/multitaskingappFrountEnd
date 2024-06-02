@@ -8,9 +8,9 @@ import { Observable } from 'rxjs';
 })
 export class LoginServiceService {
 
-  private baseurl="http://localhost:8080/user/add"
+  private baseurl="http://localhost:8080"
   constructor(private http:HttpClient) { }
   addUser(user:any):Observable<object>{
-    return this.http.post(`${this.baseurl}/user`,user);
+    return this.http.post(`${this.baseurl}/user/`,user);
   }
 }
