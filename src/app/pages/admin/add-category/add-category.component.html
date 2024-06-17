@@ -1,0 +1,23 @@
+<h1><div mat-subheader>All Catagory</div></h1>
+<div class="container">
+  <form class="example-form" (ngSubmit)="addcategory()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Title</mat-label>
+      <input [(ngModel)]="categorys.title" id="title" name="title" matInput placeholder="TitleXXXXXXX" required>
+    </mat-form-field>
+    
+    <mat-form-field class="example-full-width">
+      <mat-label>Discription</mat-label>
+      <textarea [(ngModel)]="categorys.description" name="discription" matInput placeholder="Ex. It makes me feel..." required></textarea>
+    </mat-form-field>
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Subject</label>
+      </div>
+      <div class="col-75">
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      </div>
+    </div>
+    
+    <button class="button">Add</button>
+  </form>

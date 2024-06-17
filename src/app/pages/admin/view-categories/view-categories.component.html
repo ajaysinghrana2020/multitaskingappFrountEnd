@@ -1,0 +1,19 @@
+<mat-list>
+  <h1><div mat-subheader>All Catagory</div></h1>
+  <div></div>
+    <li *ngFor="let folder of catagory"> 
+    <mat-list-item>
+      
+      <mat-icon matListItemIcon>folder</mat-icon>
+      <div matListItemTitle>{{folder.title}}</div>
+      <div matListItemLine>{{folder.description}}</div>
+    </mat-list-item>
+    <button class="button ">Edit </button>
+    <button class="button ">Delete </button>
+    <mat-divider></mat-divider>
+  </li>
+
+
+ 
+
+</mat-list>

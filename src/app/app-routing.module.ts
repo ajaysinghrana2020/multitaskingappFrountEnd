@@ -9,11 +9,36 @@ import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboa
 import { AdminGuard } from './services/admin.guard';
 import { NormalGuard } from './services/normal.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { WelcomecomponentComponent } from './pages/admin/welcomecomponent/welcomecomponent.component';
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
+import { QuizaddComponent } from './pages/admin/quizadd/quizadd.component';
+import { QuizComponent } from './pages/admin/quiz/quiz.component';
 
 const routes: Routes = [
   {path:'',component:SignupComponent},
   {path:'login',component:LoginComponent},
-  {path:'admin',component:DashboardComponent,canActivate:[AdminGuard]},
+  {path:'admin',component:DashboardComponent,canActivate:[AdminGuard],children:[
+    {
+    path:'',
+    component:WelcomecomponentComponent,
+    },
+    {
+      path:'catagories',
+      component:ViewCategoriesComponent,
+    },
+    {
+      path:'addcatagories',
+      component:AddCategoryComponent,
+    },
+    {
+      path:'quiz',
+      component:QuizComponent,
+    },{
+      path:'quizadd',
+      component:QuizaddComponent,
+    }
+  ]},
   {path:'user-dashboard',component:UserDashboardComponent,canActivate:[NormalGuard]},
   {path:'admin/profile',component:ProfileComponent,canActivate:[AdminGuard]},
   

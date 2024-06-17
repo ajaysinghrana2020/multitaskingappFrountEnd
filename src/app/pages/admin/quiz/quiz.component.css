@@ -1,0 +1,7 @@
+.example-card {
+  display: flex;
+}
+
+.example-card-footer {
+  padding: 16px;
+}
