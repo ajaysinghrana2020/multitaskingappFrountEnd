@@ -36,6 +36,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
 
 import { MatSelectModule } from '@angular/material/select';
+import { ViewquizQuestionsComponent } from './pages/admin/viewquiz-questions/viewquiz-questions.component';
+import { AddquizQuestionsComponent } from './pages/admin/addquiz-questions/addquiz-questions.component';
 
 
 
@@ -57,6 +59,8 @@ import { MatSelectModule } from '@angular/material/select';
     AddCategoryComponent,
     QuizaddComponent,
     QuizComponent,
+    ViewquizQuestionsComponent,
+    AddquizQuestionsComponent,
 
     
   ],

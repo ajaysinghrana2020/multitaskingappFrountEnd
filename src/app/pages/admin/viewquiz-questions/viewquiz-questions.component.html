@@ -1,0 +1,28 @@
+
+<body>
+    <div class="container">
+        <button class="button" [routerLink]="'/admin/questionsadd/' + qId + '/' + qTitle">Add Question</button>
+        <h2>Multiple Choice Questions Of {{qTitle}}</h2>
+
+        <div class="mcq" *ngFor="let qdata of questions;let i = index">
+            <p class="question">{{i+1}}. {{qdata.content}}</p>
+            <div class="options">
+                <div class="column">
+                    <div  id="q1-option1" name="q1" value="London"></div>
+                    <label for="q1-option1">{{qdata.option1}}</label><br>
+            
+                    <div  id="q1-option2" name="q1" value="Paris"></div>
+                    <label for="q1-option2">{{qdata.option2}}</label><br>
+                </div>
+                <div class="column">
+                    <div  id="q1-option3" name="q1" value="Rome"></div>
+                    <label for="q1-option3">{{qdata.option3}}</label><br>
+            
+                    <div  id="q1-option4" name="q1" value="Berlin"></div>
+                    <label for="q1-option4">{{qdata.option4}}</label><br>
+                </div>
+            </div><br>
+            <!-- {{questions|json}} -->
+            <div>Solution {{qdata.answer}}</div>
+            <mat-divider></mat-divider>
+        </div>

@@ -19,6 +19,15 @@ export class QuizComponent implements OnInit{
     });
   }
 
+  deletequizz(abc:any){
+    this.quiz.deleteQuiz(abc).subscribe(data=>{
+      console.log("able to delte the quizz");
+      this.ngOnInit();
+    },(error)=>{
+      console.log("server error");
+    });
+  }
+
 
   
 }

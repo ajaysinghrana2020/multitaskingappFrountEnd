@@ -11,11 +11,15 @@
     </mat-card-content>
     <mat-card-footer class="example-card-footer">
       <mat-chip-set aria-label="Chihuahua traits">
+
+        <mat-chip [routerLink]="'/admin/questions/' + quizz.qid + '/' + quizz.title">Questions</mat-chip>
         <mat-chip>max marks {{quizz.maxMarks}}</mat-chip>
-        <mat-chip>Questions {{quizz.numberOfQuestions}}</mat-chip>
+        <mat-chip>Number of Questions {{quizz.numberOfQuestions}}</mat-chip>
         <mat-chip>update </mat-chip>
+        <mat-chip (click)="deletequizz(quizz.qid)">Delete </mat-chip>
       </mat-chip-set>
     </mat-card-footer>
   </mat-card>
+  {{quizz|json}}
 </div>
   
