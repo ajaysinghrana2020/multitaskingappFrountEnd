@@ -13,6 +13,7 @@ export class ViewquizQuestionsComponent implements OnInit {
   questions:any;
   numb=0;
   i=0;
+  idofquestion=0;
   constructor(private route:ActivatedRoute,private questionsz:QuestionsService){}
   ngOnInit(): void {
     this.qId=this.route.snapshot.params['id'];
@@ -30,6 +31,14 @@ export class ViewquizQuestionsComponent implements OnInit {
   anc():Number{
     this.numb=this.numb+1;
     return this.numb;
+  }
+  deletequestion(data:any){
+    this.questionsz.deleteQuestion(data).subscribe(data=>{
+      console.log("able to delete Question");
+      this.ngOnInit();
+    },(error)=>{
+      console.log("not able to delete question");
+    })
   }
  
 }

@@ -38,6 +38,10 @@ import {MatChipsModule} from '@angular/material/chips';
 import { MatSelectModule } from '@angular/material/select';
 import { ViewquizQuestionsComponent } from './pages/admin/viewquiz-questions/viewquiz-questions.component';
 import { AddquizQuestionsComponent } from './pages/admin/addquiz-questions/addquiz-questions.component';
+import { WelcomecompComponent } from './pages/user/welcomecomp/welcomecomp.component';
+import { SidebarComponent as UserSiderBar } from './pages/user/sidebar/sidebar.component';
+import { InstructionpageComponent } from './pages/user/instructionpage/instructionpage.component';
+import { QuizstartComponent } from './pages/user/quizstart/quizstart.component';
 
 
 
@@ -61,6 +65,10 @@ import { AddquizQuestionsComponent } from './pages/admin/addquiz-questions/addqu
     QuizComponent,
     ViewquizQuestionsComponent,
     AddquizQuestionsComponent,
+    WelcomecompComponent,
+    UserSiderBar,
+    InstructionpageComponent,
+    QuizstartComponent,
 
     
   ],

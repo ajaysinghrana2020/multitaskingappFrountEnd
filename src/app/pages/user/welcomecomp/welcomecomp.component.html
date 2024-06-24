@@ -1,0 +1,24 @@
+<body>
+    <div class="grid-container" *ngIf="quizzList.length!=0">
+        <div class="card" *ngFor="let abc of quizzList">
+            <div  class="card-header">
+                <h2>{{abc.title}}</h2>
+            </div>
+            <div class="card-body">
+                <p>{{abc.description}}</p>
+                <h3><p>{{abc.category.title}}</p></h3>
+            </div>
+            <div class="card-footer">
+                <a class="btn">View</a>
+                <button class="btn" [routerLink]="'/user-dashboard/instruction/'+abc.qid">Start</button>
+                <a  class="btn">M.M:{{abc.maxMarks}}</a>
+                <a class="btn">Questions:{{abc.numberOfQuestions}}</a>
+
+            </div>
+        </div>
+        <!-- Repeat the card structure for more items -->
+    </div>
+    <div *ngIf="quizzList.length==0">
+        <p>no Data For this Perticular Catagory</p>
+    </div>
+    </body>

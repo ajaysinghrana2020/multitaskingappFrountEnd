@@ -10,7 +10,7 @@ export class QuizzService {
   private baseurl = "http://localhost:8080/";
   constructor(private http:HttpClient) { }
 
-  public getQuiz(){
+  public getQuizes(){
     return this.http.get(`${this.baseurl}quiz/`)
   }
 
@@ -20,5 +20,12 @@ export class QuizzService {
 
   public addQuizz(data:any): Observable<object>{
     return this.http.post((`${this.baseurl}quiz/`),data);
+  }
+
+  public getQuiz(id:any){
+    return this.http.get(`${this.baseurl}quiz/${id}`);
+  }
+  public getQuizForCatagoryId(id:any){
+    return this.http.get(`${this.baseurl}quiz/catagoryId/${id}`);
   }
 }

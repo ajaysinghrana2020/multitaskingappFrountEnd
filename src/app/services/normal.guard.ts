@@ -8,7 +8,6 @@ import { LoginService } from './login.service';
 })
 export class NormalGuard implements CanActivate {
   constructor(private login:LoginService,private router:Router){
-
   }
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -19,5 +18,4 @@ export class NormalGuard implements CanActivate {
     this.router.navigate(['login']);
     return false;
   }
-  
 }

@@ -9,20 +9,22 @@
             <div class="options">
                 <div class="column">
                     <div  id="q1-option1" name="q1" value="London"></div>
-                    <label for="q1-option1">{{qdata.option1}}</label><br>
+                    <label for="q1-option1"><strong>A:</strong>  {{qdata.option1}}</label><br>
             
                     <div  id="q1-option2" name="q1" value="Paris"></div>
-                    <label for="q1-option2">{{qdata.option2}}</label><br>
+                    <label for="q1-option2"><strong>B:</strong>  {{qdata.option2}}</label><br>
                 </div>
                 <div class="column">
                     <div  id="q1-option3" name="q1" value="Rome"></div>
-                    <label for="q1-option3">{{qdata.option3}}</label><br>
+                    <label for="q1-option3"><strong>C:</strong>  {{qdata.option3}}</label><br>
             
                     <div  id="q1-option4" name="q1" value="Berlin"></div>
-                    <label for="q1-option4">{{qdata.option4}}</label><br>
+                    <label for="q1-option4"><strong>D:</strong>  {{qdata.option4}}</label><br>
                 </div>
             </div><br>
             <!-- {{questions|json}} -->
-            <div>Solution {{qdata.answer}}</div>
+            <div>Solution:- {{qdata.answer}}</div>
+            <button class="button" (click)="deletequestion(qdata.quesId)">Delete</button>
+            <button class="button" [routerLink]="'/admin/questionsadd/' + qId + '/' + qTitle">Update</button>
             <mat-divider></mat-divider>
         </div>

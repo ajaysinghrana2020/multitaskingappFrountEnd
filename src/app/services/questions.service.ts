@@ -16,10 +16,11 @@ export class QuestionsService {
     }
   
     public deleteQuestion(id:any){
-      return this.http.delete(`${this.baseurl}question/${id}`)
+      return this.http.put(`${this.baseurl}question/${id}`,id);
     }
   
     public addQuestion(data:any): Observable<object>{
+      console.log(data);
       return this.http.post((`${this.baseurl}question/`),data);
     }
   

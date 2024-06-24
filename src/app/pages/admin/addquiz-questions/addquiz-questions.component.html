@@ -1,37 +1,38 @@
 <body>
     <div class="container">
-        <h2>Add MCQ to Database</h2>
-        <form action="submit_mcq.php" method="POST">
+        {{question|json}}
+        <h2>Add MCQ For {{qTitle}}</h2>
+        <form >
             <div class="form-group">
                 <label for="question">Question:</label>
-                <input type="text" id="question" name="question" required>
+                <input type="text" id="question" [(ngModel)]="question.content" name="content" required>
             </div>
             <div class="form-group">
                 <label for="option1">Option 1:</label>
-                <input type="text" id="option1" name="option1" required>
+                <input type="text" id="option1" name="option1" [(ngModel)]="question.option1" name="option1" required>
             </div>
             <div class="form-group">
                 <label for="option2">Option 2:</label>
-                <input type="text" id="option2" name="option2" required>
+                <input type="text" id="option2" name="option2" [(ngModel)]="question.option2" name="option2" required>
             </div>
             <div class="form-group">
                 <label for="option3">Option 3:</label>
-                <input type="text" id="option3" name="option3" required>
+                <input type="text" id="option3" name="option3" [(ngModel)]="question.option3" name="option3" required>
             </div>
             <div class="form-group">
                 <label for="option4">Option 4:</label>
-                <input type="text" id="option4" name="option4" required>
+                <input type="text" id="option4" name="option4" [(ngModel)]="question.option4" name="option4" required>
             </div>
             <div class="form-group">
                 <label for="correct-answer">Correct Answer:</label>
-                <select id="correct-answer" name="correct-answer" required>
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                    <option value="option4">Option 4</option>
+                <select id="correct-answer"  [(ngModel)]="question.answer" name="answer" required>
+                    <option [(ngModel)]="question.option1" value="{{question.option1}}">{{question.option1}}</option>
+                    <option [(ngModel)]="question.option2" value="{{question.option2}}">{{question.option2}}</option>
+                    <option [(ngModel)]="question.option3" value="{{question.option3}}">{{question.option3}}</option>
+                    <option [(ngModel)]="question.option4" value="{{question.option4}}">{{question.option4}}</option>
                 </select>
             </div>
-            <button type="submit">Add MCQ</button>
+            <button (click)="addQuestion()" type="submit">Add MCQ</button>
         </form>
     </div>
 </body>

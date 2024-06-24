@@ -56,9 +56,7 @@
   
   <select matNativeControl required  name="category" [(ngModel)]="quizzadd.category.cid" required> 
     
-    <option *ngFor="let cat of catagorylist" 
-     [value]="cat.cid" 
-   >{{cat.title}}</option>
+    <option *ngFor="let cat of catagorylist"  [value]="cat.cid">{{cat.title}}</option>
   </select>
       </div>
     </div>

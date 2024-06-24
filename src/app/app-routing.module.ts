@@ -16,6 +16,9 @@ import { QuizaddComponent } from './pages/admin/quizadd/quizadd.component';
 import { QuizComponent } from './pages/admin/quiz/quiz.component';
 import { ViewquizQuestionsComponent } from './pages/admin/viewquiz-questions/viewquiz-questions.component';
 import { AddquizQuestionsComponent } from './pages/admin/addquiz-questions/addquiz-questions.component';
+import { WelcomecompComponent } from './pages/user/welcomecomp/welcomecomp.component';
+import { InstructionpageComponent } from './pages/user/instructionpage/instructionpage.component';
+import { QuizstartComponent } from './pages/user/quizstart/quizstart.component';
 
 const routes: Routes = [
   {path:'',component:SignupComponent},
@@ -47,8 +50,21 @@ const routes: Routes = [
       component:AddquizQuestionsComponent,
     }
   ]},
-  {path:'user-dashboard',component:UserDashboardComponent,canActivate:[NormalGuard]},
+  {path:'user-dashboard',component:UserDashboardComponent,canActivate:[NormalGuard],children:[
+    {
+      path:':catId',
+      component:WelcomecompComponent,
+    },
+    {
+      path:'instruction/:qid',
+      component:InstructionpageComponent,
+    },
+  ]},
   {path:'admin/profile',component:ProfileComponent,canActivate:[AdminGuard]},
+  {
+    path:'quizStart/:id',
+    component:QuizstartComponent,canActivate:[NormalGuard]
+  },
   
   // {path:'',component:LandingPageComponent}
 

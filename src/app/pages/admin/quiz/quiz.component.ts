@@ -11,7 +11,7 @@ export class QuizComponent implements OnInit{
 
   constructor(private quiz:QuizzService){}
   ngOnInit(): void { 
-    this.quiz.getQuiz().subscribe((data:any)=>{
+    this.quiz.getQuizes().subscribe((data:any)=>{
       this.quizzz=data;
       console.log("data form quizz"+this.quizzz);
     },(error)=>{

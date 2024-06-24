@@ -1,0 +1,10 @@
+<div class="sidebar">
+    <a class="active" routerLink="/user-dashboard/0">Home</a>
+    <a *ngFor="let abc of catagoryz" [routerLink]="'/user-dashboard/'+abc.cid" >{{abc.title}}</a>
+ 
+  </div>
+  
+  <!-- Page content -->
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>

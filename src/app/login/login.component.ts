@@ -42,7 +42,7 @@ export class LoginComponent {
             }
             else if(this.loginservice.getUserRole()=="NORMAL"){
             //  window.location.href='/user-dashboard';
-            this.router.navigate(['user-dashboard']);
+            this.router.navigate(['user-dashboard/0']);
             this.loginservice.loginStatusSubject.next(true);
             }
             else{

@@ -7,12 +7,8 @@ import { LoginService } from './login.service';
   providedIn: 'root'
 })
 export class AdminGuard implements CanActivate {
-
   constructor(private login:LoginService , private router:Router){
-
   }
-
-
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
@@ -20,8 +16,6 @@ export class AdminGuard implements CanActivate {
         return true;
       }
       this.router.navigate(['login']);
-
     return false;
   }
-  
 }

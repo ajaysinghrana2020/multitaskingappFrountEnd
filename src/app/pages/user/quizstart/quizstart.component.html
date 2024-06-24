@@ -1,0 +1,17 @@
+<body>
+    <div class="quiz-container">
+        <h1>Multiple Choice Quiz</h1>
+        <form id="quiz-form">
+            <div class="question" *ngFor="let abc of questions">
+                <h2>Question 1: {{abc.content}}</h2>
+                <ul class="options">
+                    <li><label><input type="radio" name="question1" value="a"> {{abc.option1}}</label></li>
+                    <li><label><input type="radio" name="question1" value="b"> {{abc.option2}}</label></li>
+                    <li><label><input type="radio" name="question1" value="c"> {{abc.option3}}</label></li>
+                    <li><label><input type="radio" name="question1" value="d"> {{abc.option4}}</label></li>
+                </ul>
+            </div>            
+            <button type="submit" class="submit-button">Submit Answers</button>
+        </form>
+    </div>
+</body>

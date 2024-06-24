@@ -1,0 +1,32 @@
+<body>
+    <header>
+        <h1>Assignment Instructions</h1>
+    </header>
+
+    <main>
+        <section id="overview">
+            <h2>{{datalist.title}}</h2>
+            <p>{{datalist.description}}</p>
+        </section>
+        
+        <section id="submission">
+            <h2>Submission Guidelines</h2>
+            <ul>
+                <li>This Quiz is for Practice Purpose.</li>
+                <li>The Duration of Quizz will be.</li>
+                <li>Each Question having 10 marks.</li>
+                <li>All Question are MCQ Type. </li>
+                <!-- Add any other relevant submission guidelines -->
+            </ul>
+        </section>
+        
+        <section id="resources">
+            <h2>Resources</h2>
+            <p>{{datalist.category.description}}</p>
+        </section>
+        <button class="button" [routerLink]="'/quizStart/'+datalist.qid">Start Quiz</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Institution. All rights reserved.</p>
+    </footer>
+</body>
